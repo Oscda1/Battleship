@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "Battleship_backend": {
+      "main": "src/Battleship_backend/main.mo",
+      "type": "motoko"
+    },
+    "Battleship_frontend": {
+      "dependencies": [
+        "Battleship_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/Battleship_frontend/src/index.html"
+      },
+      "source": [
+        "src/Battleship_frontend/assets",
+        "dist/Battleship_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
