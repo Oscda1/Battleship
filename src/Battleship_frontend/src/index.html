@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Battleship</title>
-    <base href="/" />
-    <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
-  </head>
-  <body>
-    <main>
-      <img src="logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
-    </main>
-  </body>
+<html>
+<head>
+  <title>Battleship</title>
+</head>
+<body>
+
+  <h1>Battleship</h1>
+  
+  <div id="board"></div>
+
+  <div>
+    <input type="number" id="guess-x">
+    <input type="number" id="guess-y">
+    <button id="fire-button">Fire!</button>
+  </div>
+
+  <div id="messages"></div>
+
+  <script type="module">
+    // JavaScript code to interact with Motoko canister
+  </script>
+
+</body>
 </html>

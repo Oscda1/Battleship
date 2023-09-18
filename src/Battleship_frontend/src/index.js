@@ -1,19 +1,31 @@
-import { Battleship_backend } from "../../declarations/Battleship_backend";
+// JavaScript 
+import { Battleship } from "/home/karsam/Battleship/src/Battleship_backend/main.mo";
 
-document.querySelector("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const button = e.target.querySelector("button");
+const boardEl = document.getElementById("board");
+const messageEl = document.getElementById("messages");
 
-  const name = document.getElementById("name").value.toString();
+// render board 
+function renderBoard() {
+  // loop through board and render squares
+}
 
-  button.setAttribute("disabled", true);
+// handler for firing button click
+const fireButton = document.getElementById("fire-button");
+fireButton.onclick = async () => {
 
-  // Interact with foo actor, calling the greet method
-  const greeting = await Battleship_backend.greet(name);
+  const x = document.getElementById("guess-x").value;
+  const y = document.getElementById("guess-y").value;
 
-  button.removeAttribute("disabled");
+  const result = await Battleship.makeMove(x, y);
+  
+  messageEl.innerText = result;
 
-  document.getElementById("greeting").innerText = greeting;
+  // check for win
+  if (await Battleship.checkSunk()) {
+    messageEl.innerText = "You sank all the ships, you win!";
+  }
 
-  return false;
-});
+};
+
+// initial render
+renderBoard();
